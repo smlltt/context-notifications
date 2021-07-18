@@ -15,6 +15,11 @@ export const useToast = () => {
         key: id,
       },
     });
+
+    setTimeout(() => {
+      // @ts-ignore
+      dispatch({ type: "DELETE_TOAST", id });
+    }, 4000);
   };
   return toast;
 };

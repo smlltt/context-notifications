@@ -1,13 +1,14 @@
 import React from "react";
 import Toast from "../Toast";
 import { useToastStateContext } from "../../context/ToastContext";
+import { ToastsWrapper } from "./styles";
 
 const ToastContainer = () => {
   const { toasts } = useToastStateContext();
   console.log(`toast state context: ${toasts}`);
 
   return (
-    <div>
+    <ToastsWrapper>
       {toasts &&
         toasts.map((toast) => (
           <Toast
@@ -17,7 +18,7 @@ const ToastContainer = () => {
             message={toast.message}
           />
         ))}
-    </div>
+    </ToastsWrapper>
   );
 };
 
